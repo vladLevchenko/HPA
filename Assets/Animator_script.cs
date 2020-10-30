@@ -7,6 +7,7 @@ public class Animator_script : MonoBehaviour
 {
     CharacterController charCtrl;
     Animator animCtrl;
+    Camera camCtrl;
     private const string ANIM_WALK = "isWalking";
     private const string ANIM_RUN = "isRunning";
     
@@ -15,12 +16,14 @@ public class Animator_script : MonoBehaviour
 
     public float gravity = Physics.gravity.y;
     public float _rotationSpeed = 180;
+    public Vector3 moveDirection;
 
     // Start is called before the first frame update
     void Start()
     {
         charCtrl = GetComponent<CharacterController>();
         animCtrl = GetComponent<Animator>();
+        camCtrl = Camera.main;
     }
 
     // Update is called once per frame
@@ -31,23 +34,21 @@ public class Animator_script : MonoBehaviour
         
 
     }
-
     private void Rotate()
     {
-        var turnDirHorizontal = Math.Sign(Input.GetAxis("Horizontal"))*90;
-        var turnDirVertical = Input.GetAxis("Vertical") >= 0 ? 0 : 180;
-        var currentRotationY = transform.eulerAngles.y;
-        if (Input.GetAxis("Horizontal") != 0 && turnDirHorizontal != currentRotationY)
-            transform.localRotation = Quaternion.Euler(0, turnDirHorizontal, 0); 
-        if(Input.GetAxis("Vertical")!=0 && turnDirVertical != currentRotationY)
-            transform.localRotation = Quaternion.Euler(0, turnDirVertical, 0);
+        moveDirection = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+        transform.localEulerAngles = moveDirection;
 
     }
 
     void Move()
     {
+
         animCtrl.SetBool(ANIM_WALK, false);
         animCtrl.SetBool(ANIM_RUN, false);
+
+
+
 
         var verticalMove = Input.GetAxis("Vertical");
         var horizontalMove = Input.GetAxis("Horizontal");
@@ -67,8 +68,8 @@ public class Animator_script : MonoBehaviour
                 animCtrl.SetBool(ANIM_WALK, false);
                 animCtrl.SetBool(ANIM_RUN, isMoved);
             }
-            moveDirection = dir;
-              //transform.TransformDirection(dir);         
+            moveDirection = Camera.main.transform.TransformDirection(dir);
+            //transform.TransformDirection(dir);         
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
