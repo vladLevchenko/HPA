@@ -19,11 +19,8 @@ public class Camera_follow : MonoBehaviour
     void Update()
     {
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
-        //Vector3 pos = player.transform.position;
-        //pos.z -= cameraHeight;
-        //pos.y += cameraHeight/2;
         
         transform.position = player.transform.position + offset;
-        transform.LookAt(player.transform);
+        transform.LookAt(player.transform.position+ new Vector3(0,1,0));
     }
 }

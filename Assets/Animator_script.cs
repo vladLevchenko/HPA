@@ -57,7 +57,7 @@ public class Animator_script : MonoBehaviour
         var dir = new Vector3(horizontalMove, 0, verticalMove);
         var isMoved = dir!= Vector3.zero;
 
-
+        
         animCtrl.SetBool(ANIM_WALK, isMoved);
        
         if (charCtrl.isGrounded)
@@ -72,7 +72,7 @@ public class Animator_script : MonoBehaviour
             //transform.TransformDirection(dir);         
         }
 
-        moveDirection.y -= gravity * Time.deltaTime;
+        moveDirection.y += gravity * Time.deltaTime;
         charCtrl.Move(moveDirection*speed * Time.deltaTime);
         //transform.Translate(new Vector3(0, -gravity * Time.deltaTime, horizontalMove + verticalMove != 0 ? 1 : 0) * speed * Time.deltaTime);
     }

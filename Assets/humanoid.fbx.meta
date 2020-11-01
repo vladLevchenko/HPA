@@ -12,9 +12,18 @@ ModelImporter:
   - first:
       74: 3069632114805996886
     second: Armature|Humanoid.Walk
+  - first:
+      74: -7638979315691267941
+    second: Armature|Humanoid.Run (1)
+  - first:
+      74: -4950104519086199587
+    second: Armature|Humanoid.Run (2)
+  - first:
+      74: -5827936444755833697
+    second: Armature|Humanoid.Walk (1)
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -32,7 +41,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -43,9 +52,9 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|Humanoid.Idle
       takeName: Armature|Humanoid.Idle
-      internalID: 1347102335433549993
+      internalID: 0
       firstFrame: 0
-      lastFrame: 100
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -72,9 +81,9 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|Humanoid.Run
       takeName: Armature|Humanoid.Run
-      internalID: -2560739160584783138
+      internalID: 0
       firstFrame: 0
-      lastFrame: 28
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -101,7 +110,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|Humanoid.Walk
       takeName: Armature|Humanoid.Walk
-      internalID: 3069632114805996886
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -130,7 +139,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -139,7 +148,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -155,7 +164,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -181,7 +190,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -190,7 +199,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
